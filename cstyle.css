@@ -34,3 +34,21 @@ label {
 #years, #grade {
 	width: 70px;
 }
+
+nav {
+    font-size: 15px;
+		font-family: 'Cantata One', serif;
+    text-decoration: none;
+		text-align: center;
+}
+
+ul {
+    list-style-type: none;
+		padding-top: 18px;
+		padding-left: 10px;
+		padding-right: 10px;
+}
+
+li {
+	padding-bottom: 20px;
+}
