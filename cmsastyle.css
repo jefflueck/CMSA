@@ -1,0 +1,36 @@
+/* Contact Form Page */
+
+.container form {
+	margin: 0 auto;
+	width: 80%;
+	margin-bottom: 40px;
+}
+
+button {
+	margin-left: -15px;
+}
+
+.container h2 {
+	align-content: center;
+  vertical-align: middle;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 26px;
+	font-family: 'Cantata One', serif;
+	font-size: 24px;
+	color: red;
+	border: solid 1px black;
+	padding: 10px;
+	background-color: #f2f2f2;
+	width: 36%;
+}
+
+label {
+	font-size: 17px;
+	color: black;
+	font-family: 'Cantata One', serif;
+}
+
+#years, #grade {
+	width: 70px;
+}
