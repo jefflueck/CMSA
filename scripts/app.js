@@ -7,10 +7,26 @@
         requireBase: false
       });
 
+
     $stateProvider
       .state('home', {
         url: '/',
         templateUrl: '/templates/home.html'
+      });
+
+      .state('list', {
+        url: '/list.html',
+        templateUrl: '/templates/list.html'
+      });
+
+      .state('new-entry', {
+        url: '/new-entry.html',
+        templateUrl: '/templates/new-entry.html'
+      });
+      
+      .state('single', {
+        url: '/single.html',
+        templateUrl: '/templates/single.html'
       });
 
   }
