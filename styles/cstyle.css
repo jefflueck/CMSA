@@ -25,6 +25,10 @@ button {
 	width: 36%;
 }
 
+h1, h2 {
+	text-align: center;
+}
+
 label {
 	font-size: 17px;
 	color: black;
@@ -36,19 +40,23 @@ label {
 }
 
 nav {
-    font-size: 15px;
+    font-size: 18px;
 		font-family: 'Cantata One', serif;
     text-decoration: none;
 		text-align: center;
 }
 
 ul {
-    list-style-type: none;
-		padding-top: 18px;
-		padding-left: 10px;
-		padding-right: 10px;
+  	list-style-type: none;
 }
 
 li {
-	padding-bottom: 20px;
+	padding-top: 35px;
+
+}
+
+a {
+	background-color: #f2f2f2;
+	width: 36%;
+	padding: 10px;
 }
