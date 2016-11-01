@@ -23,11 +23,5 @@
 * Individual student
 * Edit student form
 
-1. Create HTML templates for views
-2. Create a git repository (this folder should be tracked in Git and pushed to GitHub)
-
-* git init in this directory
-* Create repository on github.com
-* Commit your changes locally
-* Connect local repository to remote repository
-* Push local repository to GitHub
+1. Set up a controller for the single student view similar to the list controller.
+2. Set up a controller for the new entry view (it won't have any functionality)

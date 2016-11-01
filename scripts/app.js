@@ -11,20 +11,18 @@
       .state('home', {
         url: '/',
         templateUrl: '/templates/home.html'
-      });
-    $stateProvider
+      })
       .state('list', {
-        url: '/list.html',
+        url: '/list',
         templateUrl: '/templates/list.html',
-      });
-    $stateProvider
+        controller: "ListCtrl as list"
+      })
       .state('new-entry', {
-        url: '/new-entry.html',
-        templateUrl: '/templates/new-entry.html',
-      });
-    $stateProvider
+        url: '/new-entry',
+        templateUrl: '/templates/new-entry.html'
+      })
       .state('single', {
-        url: '/single.html',
+        url: '/single',
         templateUrl: '/templates/single.html'
       });
 
