@@ -23,7 +23,8 @@
       })
       .state('single', {
         url: '/single',
-        templateUrl: '/templates/single.html'
+        templateUrl: '/templates/single.html',
+        controller: "SingleCtrl as list"
       });
 
 }
