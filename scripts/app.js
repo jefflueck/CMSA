@@ -19,7 +19,8 @@
       })
       .state('new-entry', {
         url: '/new-entry',
-        templateUrl: '/templates/new-entry.html'
+        templateUrl: '/templates/new-entry.html',
+        controller: "NewCtrl as list"
       })
       .state('single', {
         url: '/single',

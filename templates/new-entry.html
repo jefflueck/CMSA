@@ -1,42 +1,42 @@
 
 <!-- New Student Entry Form -->
-<div class="container">
+<div class="container" ng-repeat="new in list.new">
   <form class="form-horizontal" action="https://formspree.io/heidi.lueck@gmail.com"
     method="POST">
 				<div class="form-group">
-					<h2>New Students</h2>
+					<h2>{{ list.heading }}</h2>
 					<input type="hidden" name="_subject" value="New Student!"/>
 				</div>
 				<div class="form-group">
-					<label for="studentsName">Students Name</label>
+					<label for="studentsName">{{ new.studentsName }}</label>
 					<input type="text" name="text" class="form-control" id="studentName" placeholder="John/Jane Smith">
 				</div>
 				<div class="form-group">
-					<label for="parentsName">Parents Name</label>
+					<label for="parentsName">{{ new.parentsName }}</label>
 					<input type="text" name="text" class="form-control" id="parentsName" placeholder="John/Jane Smith">
 				</div>
 				<div class="form-group">
-					<label for="address">Home Address</label>
+					<label for="address">{{ new.address }}</label>
 					<input type="text" name="text" class="form-control" id="adress" placeholder="111 Smith Street, Any Town, State 55555">
 				</div>
 				<div class="form-group">
-					<label for="telephoneNumber">Phone Number</label>
+					<label for="telephoneNumber">{{ new.phoneNumber }}</label>
 					<input type="tel" name="tel" class="form-control" id="telephoneNumber" placeholder="111-111-1111">
 				</div>
 				<div class="form-group">
-					<label for="email">Email</label>
+					<label for="email">{{ new.email }}</label>
 					<input type="email" name="_replyto" class="form-control" id="email" placeholder="example@service.com">
 				</div>
 				<div class="form-group">
-					<label for="birthday">Birthday</label>
+					<label for="birthday">{{ new.birthday }}</label>
 					<input type="text" name="text" class="form-control" id="birthday" placeholder="MM/DD/YYYY">
 				</div>
 				<div class="form-group">
-					<label for="school">School</label>
+					<label for="school">{{ new.school }}</label>
 					<input type="text" name="text" class="form-control" id="school">
 				</div>
 				<div class="form-group">
-				<label for="grade">Grade in School</label>
+				<label for="grade">{{ new.grade }}</label>
 				<select class="form-control" id="grade" name="option">
 					<option>none</option>
 					<option>1</option>
@@ -54,7 +54,7 @@
 				</select>
 				</div>
 				<div class="form-group">
-				<label for="years">Years in Lessons</label>
+				<label for="years">{{ new.years }}</label>
 				<select class="form-control" id="years" name="option">
 					<option>none</option>
 					<option>1</option>
@@ -80,15 +80,15 @@
 				</select>
 				</div>
 					<div class="form-group">
-					<label for="otherInstruments">Other instruments</label>
+					<label for="otherInstruments">{{ new.otherInstruments }}</label>
 					<input type="text" name="text" class="form-control" id="otherInstruments">
 				</div>
 				<div class="form-group">
-					<label for="reasonLessons">Why are you intrested in taking piano lessons</label>
+					<label for="reasonLessons">{{ new.reasonLessons }}</label>
 					<textarea class="form-control" name="textarea" rows="10" id="lessonReason"></textarea>
 				</div>
 				<div class="form-group">
-					<label for="goals">Why are your goals</label>
+					<label for="goals">{{ new.goals }}</label>
 					<textarea class="form-control" name="textarea" rows="10" id="goals"></textarea>
 				</div>
 				<button type="submit" value="Send" class="btn btn-primary">Submit</button>
