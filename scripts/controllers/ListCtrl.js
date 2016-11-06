@@ -1,3 +1,4 @@
+// Controller for List View
 (function (){
   function ListCtrl() {
 

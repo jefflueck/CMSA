@@ -60,3 +60,7 @@ a {
 	width: 36%;
 	padding: 10px;
 }
+
+tr td button {
+	margin: 0 auto;
+}

@@ -1,3 +1,4 @@
+// Controller for Single Student
 (function (){
   function SingleCtrl() {
 

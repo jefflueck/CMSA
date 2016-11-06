@@ -1,3 +1,4 @@
+// Controller for New Student
 (function (){
   function NewCtrl() {
 
@@ -17,8 +18,24 @@
         otherInstruments: "Other Instruments",
         reasonLessons: "Why are you intrested in taking lessons",
         goals: "What are your goals"
-      }
+      },
+      this.blank = [
+        {
+          studentsName: "jeff",
+          parentsName: "jeff",
+          address: "",
+          phoneNumber: "",
+          email: "",
+          birthday: "",
+          school: "",
+          grade: "",
+          years: "",
+          otherInstruments: "",
+          reasonLessons: "",
+          goals: ""
+        }
     ];
+  ];
 
   }
 
