@@ -4,8 +4,8 @@
 
     this.blank = [
       {
-        studentsName: "jeff",
-        parentsName: "jeff",
+        studentsName: "",
+        parentsName: "",
         address: "",
         phoneNumber: "",
         email: "",

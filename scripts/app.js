@@ -21,12 +21,12 @@
       .state('new-entry', {
         url: '/new-entry',
         templateUrl: '/templates/new-entry.html',
-        controller: "NewCtrl as list"
+        controller: "NewCtrl as new"
       })
       .state('single', {
         url: '/single',
         templateUrl: '/templates/single.html',
-        controller: "SingleCtrl as list"
+        controller: "SingleCtrl as single"
       });
 
 }

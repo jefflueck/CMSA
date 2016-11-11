@@ -1,6 +1,6 @@
 <!-- Single Student View -->
 <!-- Using SingleCtrl for View -->
-<h2>{{ list.heading }}</h2>
+<h2>{{ single.heading }}</h2>
 <div class="table-responsive">
   <table class="table table-striped table-bordered">
     <tr>
@@ -17,19 +17,19 @@
       <th>Intrests</th>
       <th>Goals</th>
     </tr>
-    <tr ng-repeat="student in list.student">
-      <td>{{ student.firstName }}</td>
-      <td>{{ student.lastName }}</td>
-      <td>{{ student.phoneNumber }}</td>
-      <td>{{ student.address }}</td>
-      <td>{{ student.birthday }}</td>
-      <td>{{ student.email }}</td>
-      <td>{{ student.schoolName }}</td>
-      <td>{{ student.currentGrade }}</td>
-      <td>{{ student.yearsOfLessons }}</td>
-      <td>{{ student.otherInstruments }}</td>
-      <td>{{ student.intrests }}</td>
-      <td>{{ student.goals }}</td>
+    <tr>
+      <td>{{ single.student.firstName }}</td>
+      <td>{{ single.student.lastName }}</td>
+      <td>{{ single.student.phoneNumber }}</td>
+      <td>{{ single.student.address }}</td>
+      <td>{{ single.student.birthday }}</td>
+      <td>{{ single.student.email }}</td>
+      <td>{{ single.student.schoolName }}</td>
+      <td>{{ single.student.currentGrade }}</td>
+      <td>{{ single.student.yearsOfLessons }}</td>
+      <td>{{ single.student.otherInstruments }}</td>
+      <td>{{ single.student.intrests }}</td>
+      <td>{{ single.student.goals }}</td>
     </tr>
   </table>
 </div>

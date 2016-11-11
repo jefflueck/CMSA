@@ -4,8 +4,7 @@
 
     this.heading = "Single Student";
 
-    this.student = [
-      {
+    this.student = {
         firstName: "John",
         lastName: "Smith",
         phoneNumber: "111-111-1111",
@@ -18,8 +17,7 @@
         otherInstruments: "Drums",
         intrests: "Stuff",
         goals: "Learn Piano"
-      }
-    ];
+    };
 
   }
 

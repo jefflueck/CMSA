@@ -1,6 +1,51 @@
 // Controller for New Student
 (function (){
-  function NewCtrl() {
+  function NewCtrl($scope, 'addStudent') {
+
+    $scope.studentName = "";
+    $scope.parentName = "";
+    $scope.address = "";
+    $scope.telephoneNumber = "";
+    $scope.email = "";
+    $scope.birthday = "";
+    $scope.school = "";
+    $scope.grade = "";
+    $scope.years = "";
+    $scope.otherInstruments = "";
+    $scope.reasonLessons = "";
+    $scope.goals = "";
+  }
+
+
+    // $scope.students = [
+    //   {
+    //     studentName: "John Doe",
+    //     parentName: "John Doe Sr."
+    //   }
+    // ];
+
+    $scope.addStudent = function() {
+
+      var newStudent = {
+        studentsName: $scope.studentsName,
+        parentsName: $scope.parentsName,
+        address: $scope.address,
+        telephoneNumber: $scope.telephoneNumber,
+        email: $scope.email,
+        birthday: $scope.birthday,
+        school: $scope.school,
+        grade: $scope.grade,
+        years: $scope.years,
+        otherInstruments: $scope.otherInstruments,
+        reasonLessons: $scope.reasonLessons,
+        goals: $scope.goals,
+      }
+
+      return newStudent;
+      $scope.students.push(newStudent);
+    }
+
+
 
     this.heading = "New Student";
 
@@ -18,27 +63,11 @@
         otherInstruments: "Other Instruments",
         reasonLessons: "Why are you intrested in taking lessons",
         goals: "What are your goals"
-      },
-      this.blank = [
-        {
-          studentsName: "jeff",
-          parentsName: "jeff",
-          address: "",
-          phoneNumber: "",
-          email: "",
-          birthday: "",
-          school: "",
-          grade: "",
-          years: "",
-          otherInstruments: "",
-          reasonLessons: "",
-          goals: ""
-        }
-    ];
+      }
   ];
 
-  }
+
 
   angular.module("cmsa")
-         .controller("NewCtrl", NewCtrl);
+         .controller("NewCtrl", ['$scope', NewCtrl, addStudent]);
 })();
