@@ -1,9 +1,9 @@
 // Controller for New Student
 (function (){
-  function NewCtrl($scope, 'addStudent') {
+  function NewCtrl($scope) {
 
-    $scope.studentName = "";
-    $scope.parentName = "";
+    $scope.studentsName = "";
+    $scope.parentsName = "";
     $scope.address = "";
     $scope.telephoneNumber = "";
     $scope.email = "";
@@ -14,15 +14,7 @@
     $scope.otherInstruments = "";
     $scope.reasonLessons = "";
     $scope.goals = "";
-  }
 
-
-    // $scope.students = [
-    //   {
-    //     studentName: "John Doe",
-    //     parentName: "John Doe Sr."
-    //   }
-    // ];
 
     $scope.addStudent = function() {
 
@@ -43,7 +35,7 @@
 
       return newStudent;
       $scope.students.push(newStudent);
-    }
+
 
 
 
@@ -64,10 +56,13 @@
         reasonLessons: "Why are you intrested in taking lessons",
         goals: "What are your goals"
       }
-  ];
+    ];
+
+  }
+}
 
 
 
   angular.module("cmsa")
-         .controller("NewCtrl", ['$scope', NewCtrl, addStudent]);
+         .controller("NewCtrl", ['$scope', NewCtrl]);
 })();
