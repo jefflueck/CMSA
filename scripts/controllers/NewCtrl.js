@@ -35,11 +35,9 @@
 
       return newStudent;
       $scope.students.push(newStudent);
+    }
 
-
-
-
-    this.heading = "New Student";
+    // this.heading = "New Student";
 
     this.new = [
       {
@@ -57,8 +55,6 @@
         goals: "What are your goals"
       }
     ];
-
-  }
 }
 
 
