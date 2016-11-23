@@ -1,18 +1,3 @@
-<!-- <h2>{{ new.heading }}</h2>
-
-<div class="container">
-<form ng-submit="addStudent()">
-  <input ng-model="studentName" type="text" placeholder="Student Name">
-  <input ng-model="parentName" type="text" placeholder="Parent Name">
-  <button type="submit">Submit</button>
-</form>
-
-<div ng-repeat="student in students">
-  <p>{{ student.studentName }}</p>
-  <p>{{ student.parentName }}</p>
-</div>
-
-</div> -->
 
 <!-- action="https://formspree.io/heidi.lueck@gmail.com"
   method="POST" -->
@@ -20,42 +5,42 @@
 
 <!-- New Student Entry Form -->
 <!-- Using NewCtrl for View -->
-<div class="container" ng-repeat="new in new.new">
-  <form class="form-horizontal" ng-submit="addStudent()" >
+<div class="container">
+  <form class="form-horizontal" ng-submit="addStudent()">
 				<div class="form-group">
 					<h2>New Student</h2>
 					<input type="hidden" name="_subject" value="New Student!"/>
 				</div>
 				<div class="form-group">
-					<label for="studentsName">{{ new.studentsName }}</label>
+					<p>Students Name</p>
 					<input type="text" class="form-control" id="studentsName" placeholder="John/Jane Smith" ng-model="studentsName">
 				</div>
 				<div class="form-group">
-					<label for="parentsName">{{ new.parentsName }}</label>
+					<p>Parents Name</p>
 					<input type="text" name="text" class="form-control" id="parentsName" placeholder="John/Jane Smith" ng-model="parentsName">
 				</div>
 				<div class="form-group">
-					<label for="address">{{ new.address }}</label>
+					<p>Address</p>
 					<input type="text" name="text" class="form-control" id="address" placeholder="111 Smith Street, Any Town, State 55555" ng-model="address">
 				</div>
 				<div class="form-group">
-					<label for="telephoneNumber">{{ new.phoneNumber }}</label>
+					<p>Phone Number</p>
 					<input type="tel" name="tel" class="form-control" id="telephoneNumber" placeholder="111-111-1111" ng-model="telephoneNumber">
 				</div>
 				<div class="form-group">
-					<label for="email">{{ new.email }}</label>
+					<p>Email</p>
 					<input type="email" name="_replyto" class="form-control" id="email" placeholder="example@service.com" ng-model="email">
 				</div>
 				<div class="form-group">
-					<label for="birthday">{{ new.birthday }}</label>
+					<p>Birthday</p>
 					<input type="text" name="text" class="form-control" id="birthday" placeholder="MM/DD/YYYY" ng-model="birthday">
 				</div>
 				<div class="form-group">
-					<label for="school">{{ new.school }}</label>
+					<p>School you attend</p>
 					<input type="text" name="text" class="form-control" id="school" ng-model="school">
 				</div>
 				<div class="form-group">
-				<label for="grade">{{ new.grade }}</label>
+				<p>Grade in School</p>
 				<select class="form-control" id="grade" name="option" ng-model="grade">
 					<option>none</option>
 					<option>1</option>
@@ -73,7 +58,7 @@
 				</select>
 				</div>
 				<div class="form-group">
-				<label for="years">{{ new.years }}</label>
+				<p>Years in Lessons</p>
 				<select class="form-control" id="years" name="option" ng-model="years">
 					<option>none</option>
 					<option>1</option>
@@ -99,15 +84,15 @@
 				</select>
 				</div>
 					<div class="form-group">
-					<label for="otherInstruments">{{ new.otherInstruments }}</label>
+					<p>Other Instruments</p>
 					<input type="text" name="text" class="form-control" id="otherInstruments" ng-model="otherInstruments">
 				</div>
 				<div class="form-group">
-					<label for="reasonLessons">{{ new.reasonLessons }}</label>
+					<p>Why are you intrested in taking lessons?</p>
 					<textarea class="form-control" name="textarea" rows="10" id="reasonLessons" ng-model="reasonLessons"></textarea>
 				</div>
 				<div class="form-group">
-					<label for="goals">{{ new.goals }}</label>
+					<p>What are your goals?</p>
 					<textarea class="form-control" name="textarea" rows="10" id="goals" ng-model="goals"></textarea>
 				</div>
 				<button type="submit" value="Send" class="btn btn-primary">Submit</button>
