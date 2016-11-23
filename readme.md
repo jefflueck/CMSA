@@ -25,3 +25,9 @@
 
 1. Set up a controller for the single student view similar to the list controller.
 2. Set up a controller for the new entry view (it won't have any functionality)
+
+Frontend
+  Application framework – Angular
+Backend
+  Database – MongoDB
+  Application framework – Express
