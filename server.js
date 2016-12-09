@@ -1,12 +1,36 @@
 var express = require('express');
+var mongoose = require('mongoose');
 var app = express();
 
-app.get('/', function (req, res) {
-  res.send('Hello world!');
+mongoose.connect('mongodb://localhost/cmsa');
+
+var studentSchema = mongoose.Schema({
+    studentsName: String,
+    parentsName: String,
+    yearsInLessons: Number
 });
 
-app.get('/about', function(req, res) {
-  res.send('About');
+var Student = mongoose.model('Student', studentSchema);
+
+
+// tells the app where our static files are so they can be sent to the frontend when requested
+app.use(express.static(__dirname + '/app'));
+
+app.get('/api/students', function(req, res) {
+
+    // use mongoose to get all todos in the database
+    Student.find(function(err, students) {
+
+        // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+        if (err)
+            res.send(err)
+
+        res.json(students); // return all todos in JSON format
+    });
+});
+
+app.get('*', function(req, res) {
+  res.sendfile('./app/index.html');
 });
 
 app.listen(3000, function () {
