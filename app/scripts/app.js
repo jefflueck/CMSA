@@ -24,7 +24,7 @@
         controller: "NewCtrl as new"
       })
       .state('single', {
-        url: '/single',
+        url: '/single/:id',
         templateUrl: '/templates/single.html',
         controller: "SingleCtrl as single"
       });

@@ -1,6 +1,6 @@
 // Controller for New Student
 (function (){
-  function NewCtrl($scope) {
+  function NewCtrl($scope, $http) {
 
     $scope.studentsName = "";
     $scope.parentsName = "";
@@ -38,8 +38,6 @@
     }
     
 };
-
-
 
   angular.module("cmsa")
          .controller("NewCtrl", ['$scope', NewCtrl]);
