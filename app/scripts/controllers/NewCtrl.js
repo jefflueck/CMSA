@@ -36,9 +36,9 @@
       return newStudent;
       $scope.students.push(newStudent);
     }
-    
+
 };
 
   angular.module("cmsa")
-         .controller("NewCtrl", ['$scope', NewCtrl]);
+         .controller("NewCtrl", ['$scope', '$http', NewCtrl]);
 })();
