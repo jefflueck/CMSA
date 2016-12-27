@@ -2,8 +2,7 @@
 (function (){
   function ListCtrl($scope, $http) {
 
-    this.heading = "Student List";
-
+    // Start with an empty array before fetching data
     $scope.students = [];
 
     // Make a request to the backend for the data at this endpoint

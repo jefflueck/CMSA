@@ -1,21 +1,27 @@
 var express = require('express');
 var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
 var app = express();
 
 mongoose.connect('mongodb://localhost/cmsa');
 
+app.use(bodyParser.urlencoded({'extended':'true'})); // parse application/x-www-form-urlencoded
+app.use(bodyParser.json()); //parse application/json
+app.use(bodyParser.json({ type: 'application/vnd.api+json' })); //parse application/vnd.api+json as json
+
+
 var studentSchema = mongoose.Schema({
     studentsName: String,
     parentsName: String,
-    phoneNumber: Number,
+    phoneNumber: String,
     address: String,
-    birthday: Number,
+    birthday: String,
     email: String,
     schoolName: String,
-    currentGrade: Number,
-    yearsInLessons: Number,
+    currentGrade: String,
+    yearsInLessons: String,
     otherInstruments: String,
-    intrests: String,
+    reasonForLessons: String,
     goals: String
 });
 
@@ -40,6 +46,23 @@ app.get('/api/students', function(req, res) {
 app.get('/api/students/:id', function(req, res) {
 
   Student.findById(req.params.id, function(err, student) {
+    if (err) {
+      res.send(err);
+    }
+
+    res.json(student);
+  });
+});
+
+app.post('/api/students/', function(req, res) {
+
+  console.log("hello from the back end");
+
+  console.log(req.body);
+
+  // create a student in database
+  Student.create(req.body, function(err, student) {
+
     if (err) {
       res.send(err);
     }

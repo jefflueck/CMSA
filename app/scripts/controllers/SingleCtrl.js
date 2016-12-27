@@ -2,8 +2,6 @@
 (function (){
   function SingleCtrl($stateParams, $scope, $http) {
 
-    this.heading = "Single Student";
-
     console.log($stateParams.id);
 
     $scope.student = [];

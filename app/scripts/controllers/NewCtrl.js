@@ -5,14 +5,14 @@
     $scope.studentsName = "";
     $scope.parentsName = "";
     $scope.address = "";
-    $scope.telephoneNumber = "";
+    $scope.phoneNumber = "";
     $scope.email = "";
     $scope.birthday = "";
-    $scope.school = "";
-    $scope.grade = "";
-    $scope.years = "";
+    $scope.schoolName = "";
+    $scope.currentGrade = "";
+    $scope.yearsInLessons = "";
     $scope.otherInstruments = "";
-    $scope.reasonLessons = "";
+    $scope.reasonForLessons = "";
     $scope.goals = "";
 
 
@@ -21,23 +21,34 @@
       var newStudent = {
         studentsName: $scope.studentsName,
         parentsName: $scope.parentsName,
+        phoneNumber: $scope.phoneNumber,
         address: $scope.address,
-        telephoneNumber: $scope.telephoneNumber,
-        email: $scope.email,
         birthday: $scope.birthday,
-        school: $scope.school,
-        grade: $scope.grade,
-        years: $scope.years,
+        email: $scope.email,
+        schoolName: $scope.schoolName,
+        currentGrade: $scope.currentGrade,
+        yearsInLessons: $scope.yearsInLessons,
         otherInstruments: $scope.otherInstruments,
-        reasonLessons: $scope.reasonLessons,
+        reasonForLessons: $scope.reasonForLessons,
         goals: $scope.goals,
       }
 
-      return newStudent;
-      $scope.students.push(newStudent);
-    }
+      // save the data to the database
+      $http.post('/api/students', newStudent)
+        .success(function(data) {
+          // $scope.students = data;
+          console.log("it worked!");
+          console.log(data);
+        })
+        .error(function(data) {
+          console.log(data);
+        });
+      }
 
-};
+      // return newStudent;
+      // $scope.students.push(newStudent);
+
+    }
 
   angular.module("cmsa")
          .controller("NewCtrl", ['$scope', '$http', NewCtrl]);
