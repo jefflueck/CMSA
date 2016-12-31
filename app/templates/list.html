@@ -4,8 +4,8 @@
 <div class="table-responsive">
   <table class="table table-striped table-bordered">
     <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
+      <th>Students Name</th>
+      <th>Parents Name</th>
       <th>Phone</th>
       <th>Adress</th>
       <th>Birthday</th>
@@ -34,7 +34,7 @@
       <td>{{ student.intrests }}</td>
       <td>{{ student.goals }}</td>
       <td><button type="button" class="btn btn-danger btn-xs">Edit</button></td>
-      <td><button type="button" class="btn btn-danger btn-xs">Delete</button></td>
+      <td><button type="button" class="btn btn-danger btn-xs" ng-click="deleteStudent(student_id())">Delete</button></td>
       <td><button type="button" class="btn btn-success btn-xs">Save</button></td>
     </tr>
   </table>

@@ -14,6 +14,19 @@
       .error(function(data) {
         console.log(data);
       });
+
+    //delete a student from the database
+    $scope.deleteStudent = function(id) {
+      $http.delete('/api/students/' + id)
+      .success(function(data){
+        $scope.student = data;
+        console.log("Backend works")
+        console.log(data);
+      })
+      .error(function(data){
+        console.log(data);
+      });
+    };
   }
 
   angular.module("cmsa")

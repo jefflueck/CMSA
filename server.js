@@ -32,6 +32,7 @@ app.use(express.static(__dirname + '/app'));
 
 app.get('/api/students', function(req, res) {
 
+    // List students call using mongoose to database
     // use mongoose to get all students in the database
     Student.find(function(err, students) {
 
@@ -43,6 +44,7 @@ app.get('/api/students', function(req, res) {
     });
 });
 
+// Click to see single student information using mongoose to endpoint at the database
 app.get('/api/students/:id', function(req, res) {
 
   Student.findById(req.params.id, function(err, student) {
@@ -54,6 +56,8 @@ app.get('/api/students/:id', function(req, res) {
   });
 });
 
+// Add student to database using mongoose
+// Form rendered with angular template NewCtrl binding to database
 app.post('/api/students/', function(req, res) {
 
   console.log("hello from the back end");
@@ -71,6 +75,29 @@ app.post('/api/students/', function(req, res) {
   });
 });
 
+app.delete('/api/students/:student_id', function(req,res) {
+
+  console.log("Back end working!");
+
+  console.log(req.body);
+
+
+  Student.remove({
+    _id : req.params.student_id
+  }, function(err, student) {
+    if (err) {
+      res.send(err)
+    }
+
+      // Show new list after deletion of student from database list
+      Student.find(function(err, students) {
+        if(err)
+        res.send(err)
+        res.json(students);
+
+    });
+  });
+});
 app.get('*', function(req, res) {
   res.sendfile('./app/index.html');
 });

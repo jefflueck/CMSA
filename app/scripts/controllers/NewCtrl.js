@@ -36,7 +36,7 @@
       // save the data to the database
       $http.post('/api/students', newStudent)
         .success(function(data) {
-          // $scope.students = data;
+          $scope.addStudent = {};
           console.log("it worked!");
           console.log(data);
         })
@@ -44,9 +44,6 @@
           console.log(data);
         });
       }
-
-      // return newStudent;
-      // $scope.students.push(newStudent);
 
     }
 

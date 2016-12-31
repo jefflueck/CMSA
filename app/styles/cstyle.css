@@ -64,3 +64,11 @@ a {
 tr td button {
 	margin: 0 auto;
 }
+
+td {
+	text-align: center;
+}
+
+td a {
+	background: none;
+}
