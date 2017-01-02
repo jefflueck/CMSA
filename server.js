@@ -60,7 +60,7 @@ app.get('/api/students/:id', function(req, res) {
 // Form rendered with angular template NewCtrl binding to database
 app.post('/api/students/', function(req, res) {
 
-  console.log("hello from the back end");
+  console.log("Frontend working");
 
   console.log(req.body);
 
@@ -75,11 +75,11 @@ app.post('/api/students/', function(req, res) {
   });
 });
 
-app.delete('/api/students/:student_id', function(req,res) {
+app.delete('/api/students/:id', function(req,res) {
 
-  console.log("Back end working!");
+  console.log("Backend working!");
 
-  console.log(req.body);
+  console.log(req.params.id);
 
 
   Student.remove({
@@ -98,6 +98,7 @@ app.delete('/api/students/:student_id', function(req,res) {
     });
   });
 });
+
 app.get('*', function(req, res) {
   res.sendfile('./app/index.html');
 });

@@ -2,6 +2,7 @@
 (function (){
   function ListCtrl($scope, $http) {
 
+
     // Start with an empty array before fetching data
     $scope.students = [];
 
@@ -15,12 +16,12 @@
         console.log(data);
       });
 
-    //delete a student from the database
+      //delete a student from the database
     $scope.deleteStudent = function(id) {
       $http.delete('/api/students/' + id)
       .success(function(data){
         $scope.student = data;
-        console.log("Backend works")
+        console.log("Frontend works")
         console.log(data);
       })
       .error(function(data){
