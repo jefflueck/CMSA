@@ -77,24 +77,21 @@ app.post('/api/students/', function(req, res) {
 
 app.delete('/api/students/:id', function(req,res) {
 
-  console.log("Backend working!");
+  console.log("Frontend working!");
 
   console.log(req.params.id);
 
 
-  Student.remove({
-    _id : req.params.student_id
-  }, function(err, student) {
-    if (err) {
-      res.send(err)
-    }
-
+  Student.findByIdAndRemove(req.params.id, function(err, students) {
+      if (err) {
+        res.send(err)
+      }
       // Show new list after deletion of student from database list
       Student.find(function(err, students) {
         if(err)
         res.send(err)
-        res.json(students);
 
+        res.json(students);
     });
   });
 });

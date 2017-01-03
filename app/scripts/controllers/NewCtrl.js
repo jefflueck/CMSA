@@ -2,19 +2,6 @@
 (function (){
   function NewCtrl($scope, $http) {
 
-    $scope.studentsName = "";
-    $scope.parentsName = "";
-    $scope.address = "";
-    $scope.phoneNumber = "";
-    $scope.email = "";
-    $scope.birthday = "";
-    $scope.schoolName = "";
-    $scope.currentGrade = "";
-    $scope.yearsInLessons = "";
-    $scope.otherInstruments = "";
-    $scope.reasonForLessons = "";
-    $scope.goals = "";
-
 
     $scope.addStudent = function() {
 
@@ -36,7 +23,18 @@
       // save the data to the database
       $http.post('/api/students', newStudent)
         .success(function(data) {
-          $scope.addStudent = {};
+          $scope.studentsName = "";
+          $scope.parentsName = "";
+          $scope.address = "";
+          $scope.phoneNumber = "";
+          $scope.email = "";
+          $scope.birthday = "";
+          $scope.schoolName = "";
+          $scope.currentGrade = "";
+          $scope.yearsInLessons = "";
+          $scope.otherInstruments = "";
+          $scope.reasonForLessons = "";
+          $scope.goals = "";
           console.log("it worked!");
           console.log(data);
         })

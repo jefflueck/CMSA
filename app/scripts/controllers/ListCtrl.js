@@ -18,10 +18,11 @@
 
       //delete a student from the database
     $scope.deleteStudent = function(id) {
+
       $http.delete('/api/students/' + id)
       .success(function(data){
-        $scope.student = data;
-        console.log("Frontend works")
+        $scope.students = data;
+        console.log("Backend working!")
         console.log(data);
       })
       .error(function(data){
