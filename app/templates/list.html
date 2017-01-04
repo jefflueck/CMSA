@@ -33,7 +33,7 @@
       <td>{{ student.otherInstruments }}</td>
       <td>{{ student.intrests }}</td>
       <td>{{ student.goals }}</td>
-      <td><button type="button" class="btn btn-danger btn-xs">Edit</button></td>
+      <td><button type="button" class="btn btn-danger btn-xs" ng-click="editStudent(student._id)">Edit</button></td>
       <td><button type="button" class="btn btn-danger btn-xs" ng-click="deleteStudent(student._id)">Delete</button></td>
       <td><button type="button" class="btn btn-success btn-xs">Save</button></td>
     </tr>

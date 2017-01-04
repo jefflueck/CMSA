@@ -96,6 +96,20 @@ app.delete('/api/students/:id', function(req,res) {
   });
 });
 
+app.put('/api/students/:id', function(req, res) {
+  console.log("Frontend working!");
+
+  console.log(req.params.id);
+
+  Student.findByIdAndUpdate(req.params.id, function(err, students) {
+    if(err) {
+      res.send(err)
+
+      res.json(students);
+    };
+  });
+});
+
 app.get('*', function(req, res) {
   res.sendfile('./app/index.html');
 });
