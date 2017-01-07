@@ -28,7 +28,7 @@
         templateUrl: '/templates/single.html',
         controller: "SingleCtrl as single"
       })
-      .state('edit-entry',{
+      .state('edit-entry', {
         url: '/edit-entry/:id',
         templateUrl: '/templates/edit-entry.html',
         controller: "EditCtrl as edit"

@@ -1,12 +1,12 @@
 // Controller for Editing One Student
 (function (){
-  function EditCtrl($scope, $http, $stateParms) {
+  function EditCtrl($scope, $http, $stateParams) {
 
 
       //edit a student from the database
       $scope.students = [];
 
-      $http.get('/api/students/' + id)
+      $http.get('/api/students/' + stateParams.id)
         .success(function(data) {
           $scope.students = data;
           console.log("Frontend working!")
@@ -16,7 +16,7 @@
           console.log(data);
         });
 
-      $scope.editStudent = function() {
+      $scope.editStudent = function(id) {
 
       var editStudent = {
         studentsName: $scope.studentsName,
@@ -52,6 +52,16 @@
         })
         .error(function(data){
           console.log(data);
+        })
+
+      $http.get('/api/students')
+        .success(function(data) {
+          $scope.students = data;
+          console.log("Frontend working!")
+          console.log(data);
+        })
+        .error(function(data) {
+          console.log(data);
         });
 
       }
@@ -60,5 +70,5 @@
 
 
   angular.module("cmsa")
-         .controller("EditCtrl", ['$stateParams', '$scope', '$http', EditCtrl]);
+         .controller("EditCtrl", ['$stateParams','$scope', '$http', EditCtrl]);
 })();
