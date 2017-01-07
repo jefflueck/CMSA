@@ -27,8 +27,12 @@
         url: '/single/:id',
         templateUrl: '/templates/single.html',
         controller: "SingleCtrl as single"
+      })
+      .state('edit-entry',{
+        url: '/edit-entry/:id',
+        templateUrl: '/templates/edit-entry.html',
+        controller: "EditCtrl as edit"
       });
-
 }
 
   angular.module("cmsa", ['ui.router'])

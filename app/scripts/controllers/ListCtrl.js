@@ -30,31 +30,6 @@
       });
     };
 
-    //edit a student from the database
-    $scope.editStudent = function(id) {
-
-      $http.get('/api/students/' + id)
-      .success(function(data){
-        $scope.students = data;
-        console.log("Backend working!")
-        console.log(data);
-      })
-      .error(function(data) {
-        console.log(data);
-      });
-
-      $http.put('/api/students/' + id)
-      .success(function(data) {
-        $scope.students = data;
-        console.log("Complete!")
-        console.log(data);
-      })
-      .error(function(data) {
-        console.log(data);
-      });
-
-    };
-
   };
 
   angular.module("cmsa")

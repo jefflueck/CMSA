@@ -1,0 +1,96 @@
+
+<!-- Editing Student Entry Form -->
+<!-- Using EditCtrl for View -->
+<div class="container">
+  <form class="form-horizontal" ng-submit="editStudent()">
+				<div class="form-group">
+					<h2>Edit This Student</h2>
+					<input type="hidden" name="_subject" value="New Student!"/>
+				</div>
+				<div class="form-group">
+					<p>Students Name</p>
+					<input type="text" class="form-control" id="studentsName" placeholder="John/Jane Smith" ng-model="studentsName">
+				</div>
+				<div class="form-group">
+					<p>Parents Name</p>
+					<input type="text" name="text" class="form-control" id="parentsName" placeholder="John/Jane Smith" ng-model="parentsName">
+				</div>
+				<div class="form-group">
+					<p>Address</p>
+					<input type="text" name="text" class="form-control" id="address" placeholder="111 Smith Street, Any Town, State 55555" ng-model="address">
+				</div>
+				<div class="form-group">
+					<p>Phone Number</p>
+					<input type="tel" name="tel" class="form-control" id="telephoneNumber" placeholder="111-111-1111" ng-model="phoneNumber">
+				</div>
+				<div class="form-group">
+					<p>Email</p>
+					<input type="email" name="_replyto" class="form-control" id="email" placeholder="example@service.com" ng-model="email">
+				</div>
+				<div class="form-group">
+					<p>Birthday</p>
+					<input type="text" name="text" class="form-control" id="birthday" placeholder="MM/DD/YYYY" ng-model="birthday">
+				</div>
+				<div class="form-group">
+					<p>School you attend</p>
+					<input type="text" name="text" class="form-control" id="school" ng-model="schoolName">
+				</div>
+				<div class="form-group">
+				<p>Grade in School</p>
+				<select ng-init="currentGrade = 'none'" class="form-control" id="grade" name="option" ng-model="currentGrade">
+					<option selected>none</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+					<option>11</option>
+					<option>12</option>
+				</select>
+				</div>
+				<div class="form-group">
+				<p>Years in Lessons</p>
+				<select ng-init="yearsInLessons = 'none'" class="form-control" id="years" name="option" ng-model="yearsInLessons">
+					<option selected>none</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+					<option>11</option>
+					<option>12</option>
+					<option>13</option>
+					<option>14</option>
+					<option>15</option>
+					<option>16</option>
+					<option>17</option>
+					<option>18</option>
+					<option>19</option>
+					<option>20</option>
+				</select>
+				</div>
+					<div class="form-group">
+					<p>Other Instruments</p>
+					<input type="text" name="text" class="form-control" id="otherInstruments" ng-model="otherInstruments">
+				</div>
+				<div class="form-group">
+					<p>Why are you intrested in taking lessons?</p>
+					<textarea class="form-control" name="textarea" rows="10" id="reasonLessons" ng-model="reasonForLessons"></textarea>
+				</div>
+				<div class="form-group">
+					<p>What are your goals?</p>
+					<textarea class="form-control" name="textarea" rows="10" id="goals" ng-model="goals"></textarea>
+				</div>
+				<button type="submit" value="Send" class="btn btn-primary">Save Changes</button>
+			</form>
+    </div>

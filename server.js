@@ -101,7 +101,7 @@ app.put('/api/students/:id', function(req, res) {
 
   console.log(req.params.id);
 
-  Student.findByIdAndUpdate(req.params.id, function(err, students) {
+  Student.findByIdAndUpdate(req.params.id, req.body, function(err, students) {
     if(err) {
       res.send(err)
 
