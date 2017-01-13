@@ -14,7 +14,7 @@
       <th>Current Grade</th>
       <th>Years of Lessons</th>
       <th>Other Instruments</th>
-      <th>Intrests</th>
+      <th>Reason For Lessons</th>
       <th>Goals</th>
       <th>Edit</th>
       <th>Delete</th>
@@ -30,7 +30,7 @@
       <td>{{ student.currentGrade }}</td>
       <td>{{ student.yearsInLessons }}</td>
       <td>{{ student.otherInstruments }}</td>
-      <td>{{ student.intrests }}</td>
+      <td>{{ student.reasonForLessons }}</td>
       <td>{{ student.goals }}</td>
       <td><button type="button" class="btn btn-danger btn-xs" ui-sref="edit-entry({id: student._id})">Edit</button></td>
       <td><button type="button" class="btn btn-danger btn-xs" ng-click="deleteStudent(student._id)">Delete</button></td>
