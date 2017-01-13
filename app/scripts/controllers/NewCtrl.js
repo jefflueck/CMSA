@@ -1,6 +1,6 @@
 // Controller for New Student
 (function (){
-  function NewCtrl($scope, $http) {
+  function NewCtrl($scope, $http, $state) {
 
 
     $scope.addStudent = function() {
@@ -23,20 +23,8 @@
       // save the data to the database
       $http.post('/api/students', newStudent)
         .success(function(data) {
-          $scope.studentsName = "";
-          $scope.parentsName = "";
-          $scope.address = "";
-          $scope.phoneNumber = "";
-          $scope.email = "";
-          $scope.birthday = "";
-          $scope.schoolName = "";
-          $scope.currentGrade = "";
-          $scope.yearsInLessons = "";
-          $scope.otherInstruments = "";
-          $scope.reasonForLessons = "";
-          $scope.goals = "";
+          $state.go('list');
           console.log("it worked!");
-          console.log(data);
         })
         .error(function(data) {
           console.log(data);
@@ -46,5 +34,5 @@
     }
 
   angular.module("cmsa")
-         .controller("NewCtrl", ['$scope', '$http', NewCtrl]);
+         .controller("NewCtrl", ['$scope', '$http', '$state', NewCtrl]);
 })();

@@ -104,9 +104,9 @@ app.put('/api/students/:id', function(req, res) {
   Student.findByIdAndUpdate(req.params.id, req.body, function(err, students) {
     if(err) {
       res.send(err)
-
-      res.json(students);
-    };
+    }
+    
+    res.json(students);
   });
 });
 

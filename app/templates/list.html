@@ -7,9 +7,9 @@
       <th>Students Name</th>
       <th>Parents Name</th>
       <th>Phone</th>
-      <th>Adress</th>
+      <th>Address</th>
       <th>Birthday</th>
-      <th>email</th>
+      <th>Email</th>
       <th>School Name</th>
       <th>Current Grade</th>
       <th>Years of Lessons</th>
@@ -18,7 +18,6 @@
       <th>Goals</th>
       <th>Edit</th>
       <th>Delete</th>
-      <th>Save</th>
     </tr>
     <tr ng-repeat="student in students">
       <td><a ui-sref="single({id: student._id})">{{ student.studentsName }}</a></td>
@@ -33,9 +32,8 @@
       <td>{{ student.otherInstruments }}</td>
       <td>{{ student.intrests }}</td>
       <td>{{ student.goals }}</td>
-      <td><button type="button" class="btn btn-danger btn-xs" ng-click="editStudent(student._id)">Edit</button></td>
+      <td><button type="button" class="btn btn-danger btn-xs" ui-sref="edit-entry({id: student._id})">Edit</button></td>
       <td><button type="button" class="btn btn-danger btn-xs" ng-click="deleteStudent(student._id)">Delete</button></td>
-      <td><button type="button" class="btn btn-success btn-xs">Save</button></td>
     </tr>
   </table>
 </div>

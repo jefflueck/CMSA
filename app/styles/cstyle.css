@@ -48,11 +48,12 @@ nav {
 
 ul {
   	list-style-type: none;
+		padding-right: 228px;
+		padding-left: 250px;
 }
 
 li {
 	padding-top: 35px;
-
 }
 
 a {
@@ -71,4 +72,8 @@ td {
 
 td a {
 	background: none;
+}
+
+th {
+text-align: center;
 }
