@@ -18,6 +18,7 @@
       <th>Goals</th>
       <th>Edit</th>
       <th>Delete</th>
+      <th>Student List</th>
     </tr>
     <tr>
       <td>{{ student.studentsName }}</td>
@@ -34,6 +35,7 @@
       <td>{{ student.goals }}</td>
       <td><button type="button" class="btn btn-danger btn-xs" ui-sref="edit-entry({id: student._id})">Edit</button></td>
       <td><button type="button" class="btn btn-danger btn-xs" ng-click="deleteStudent(student._id)">Delete</button></td>
+      <td><button type="button" class="btn btn-success btn-xs" ui-sref="list">Click Here</button></td>
 
     </tr>
   </table>
