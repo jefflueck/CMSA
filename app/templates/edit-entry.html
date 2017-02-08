@@ -5,7 +5,6 @@
   <form class="form-horizontal" ng-submit="editStudent()">
 				<div class="form-group">
 					<h2>Edit This Student</h2>
-					<input type="hidden" name="_subject" value="New Student!"/>
 				</div>
 				<div class="form-group">
 					<p>Students Name</p>
@@ -13,31 +12,31 @@
 				</div>
 				<div class="form-group">
 					<p>Parents Name</p>
-					<input type="text" name="text" class="form-control" id="parentsName" placeholder="John/Jane Smith" ng-model="student.parentsName">
+					<input type="text" class="form-control" id="parentsName" placeholder="John/Jane Smith" ng-model="student.parentsName">
 				</div>
 				<div class="form-group">
 					<p>Address</p>
-					<input type="text" name="text" class="form-control" id="address" placeholder="111 Smith Street, Any Town, State 55555" ng-model="student.address">
+					<input type="text" class="form-control" id="address" placeholder="111 Smith Street, Any Town, State 55555" ng-model="student.address">
 				</div>
 				<div class="form-group">
 					<p>Phone Number</p>
-					<input type="tel" name="tel" class="form-control" id="telephoneNumber" placeholder="111-111-1111" ng-model="student.phoneNumber">
+					<input type="tel" class="form-control" id="telephoneNumber" placeholder="111-111-1111" ng-model="student.phoneNumber">
 				</div>
 				<div class="form-group">
 					<p>Email</p>
-					<input type="email" name="_replyto" class="form-control" id="email" placeholder="example@service.com" ng-model="student.email">
+					<input type="email" class="form-control" id="email" placeholder="example@service.com" ng-model="student.email">
 				</div>
 				<div class="form-group">
 					<p>Birthday</p>
-					<input type="text" name="text" class="form-control" id="birthday" placeholder="MM/DD/YYYY" ng-model="student.birthday">
+					<input type="text" class="form-control" id="birthday" placeholder="MM/DD/YYYY" ng-model="student.birthday">
 				</div>
 				<div class="form-group">
 					<p>School you attend</p>
-					<input type="text" name="text" class="form-control" id="school" ng-model="student.schoolName">
+					<input type="text" class="form-control" id="school" ng-model="student.schoolName">
 				</div>
 				<div class="form-group">
 				<p>Grade in School</p>
-				<select ng-init="currentGrade = 'none'" class="form-control" id="grade" name="option" ng-model="student.currentGrade">
+				<select ng-init="currentGrade = 'none'" class="form-control" id="grade" ng-model="student.currentGrade">
 					<option selected>none</option>
 					<option>1</option>
 					<option>2</option>
@@ -55,7 +54,7 @@
 				</div>
 				<div class="form-group">
 				<p>Years in Lessons</p>
-				<select ng-init="yearsInLessons = 'none'" class="form-control" id="years" name="option" ng-model="student.yearsInLessons">
+				<select ng-init="yearsInLessons = 'none'" class="form-control" id="years" ng-model="student.yearsInLessons">
 					<option selected>none</option>
 					<option>1</option>
 					<option>2</option>
@@ -81,16 +80,16 @@
 				</div>
 					<div class="form-group">
 					<p>Other Instruments</p>
-					<input type="text" name="text" class="form-control" id="otherInstruments" ng-model="student.otherInstruments">
+					<input type="text" class="form-control" id="otherInstruments" ng-model="student.otherInstruments">
 				</div>
 				<div class="form-group">
 					<p>Why are you intrested in taking lessons?</p>
-					<textarea class="form-control" name="textarea" rows="10" id="reasonLessons" ng-model="student.reasonForLessons"></textarea>
+					<textarea class="form-control" rows="10" id="reasonLessons" ng-model="student.reasonForLessons"></textarea>
 				</div>
 				<div class="form-group">
 					<p>What are your goals?</p>
-					<textarea class="form-control" name="textarea" rows="10" id="goals" ng-model="student.goals"></textarea>
+					<textarea class="form-control" rows="10" id="goals" ng-model="student.goals"></textarea>
 				</div>
-				<button type="submit" value="Send" class="btn btn-primary">Save Changes</button>
+				<button type="submit" value="Send" class="btn btn-success">Save Changes</button>
 			</form>
     </div>

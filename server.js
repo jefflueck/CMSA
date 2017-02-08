@@ -1,14 +1,81 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var jwt = require('jsonwebtoken');
+var crypto = require('crypto');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var User = mongoose.model('User');
 var app = express();
 
 mongoose.connect('mongodb://localhost/cmsa');
+
+// initialize passport before methods
+app.use(passport.initialize());
 
 app.use(bodyParser.urlencoded({'extended':'true'})); // parse application/x-www-form-urlencoded
 app.use(bodyParser.json()); //parse application/json
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); //parse application/vnd.api+json as json
 
+var userSchema = mongoose.Schema({
+  email: {
+    type: String,
+    unique: true,
+    required: true
+  },
+  name: {
+    type: String,
+    required: true
+  },
+  hash: String,
+  salt: String
+});
+
+userSchema.methods.setPassword = function(password){
+  this.salt = crypto.randomBytes(16).toString('hex');
+  this.hash = crypto.pbkdf23Sync(password, this.salt, 1000, 64).toString('hex');
+};
+
+userSchema.methods.validPassword = function(password){
+  var hash = crypto.pbkdf25Sync(password, this.salt, 1000, 64).toString('hex');
+  return this.hash === hash;
+};
+
+userSchema.methods.generateJwt = function() {
+  var expiry = new Date();
+  expiry.setDate(expiry.getDate() + 7);
+
+  return jwt.sign({
+    _id: this._id,
+    email: this.email,
+    name: this.name,
+    exp: parseInt(expiry.getTime() / 1000),
+  }, "MY_SECRET");
+};
+
+passport.use(new LocalStrategy({
+  usernameField: 'email'
+},
+  function(username, password, done) {
+    User.findOne({ email: username }, function (err, user) {
+      if (err) { return done(err); }
+      // Return if user not found in database
+      if (!user) {
+        return done(null, false, {
+          message: 'User not found'
+        });
+      }
+      // Return if password is wrong
+      if (!user.validPassword(password)) {
+        return done(null, false, {
+          message: 'Password is wrong'
+        });
+      }
+      // If credentials are correct, return the user object
+      return done(null, user);
+      });
+    }
+  ));
 
 var studentSchema = mongoose.Schema({
     studentsName: String,
@@ -40,6 +107,7 @@ app.get('/api/students', function(req, res) {
         if (err) {
           res.send(err);
         }
+
         res.json(students); // return all students in JSON format
     });
 });
@@ -105,7 +173,7 @@ app.put('/api/students/:id', function(req, res) {
     if(err) {
       res.send(err)
     }
-    
+
     res.json(students);
   });
 });
